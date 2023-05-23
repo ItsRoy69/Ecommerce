@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
+import "./responsive.css";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import SingleProduct from "./screens/SingleProduct";
+import Login from "./screens/Login";
+import Register from "./screens/Register";
+import CartScreen from "./screens/CartScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
+import NotFound from "./screens/NotFound";
+import PrivateRouter from "./PrivateRouter";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Switch>
+        <Route path="/" component={HomeScreen} exact />
+        <Route path="/search/:keyword" component={HomeScreen} exact />
+        <Route path="/page/:pagenumber" component={HomeScreen} exact />
+        <Route
+          path="/search/:keyword/page/:pageNumber"
+          component={HomeScreen}
+          exact
+        />
+        <Route path="/products/:id" component={SingleProduct} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <PrivateRouter path="/profile" component={ProfileScreen} />
+        <Route path="/cart/:id?" component={CartScreen} />
+        <PrivateRouter path="/shipping" component={ShippingScreen} />
+        <PrivateRouter path="/payment" component={PaymentScreen} />
+        <PrivateRouter path="/placeorder" component={PlaceOrderScreen} />
+        <PrivateRouter path="/order/:id" component={OrderScreen} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Router>
+  );
+};
 
-export default App
+export default App;
