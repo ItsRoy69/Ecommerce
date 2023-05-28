@@ -11,7 +11,7 @@ textarea {
   @apply mb-2;
 }
 input:focus,
-textarea:focus{
+textarea:focus {
   @apply border-blue-900;
 }
 h1 {
@@ -22,5 +22,32 @@ label {
 }
 
 .btn-primary {
-  @apply bg-blue-900 text-white px-4 py-1 rounded-md my-2 ;
+  @apply bg-blue-900 text-white px-4 py-1 rounded-md my-2;
+}
+
+table.basic {
+  @apply w-full bg-white rounded-sm shadow-md;
+}
+table.basic thead tr td,
+table.basic thead tr th {
+  @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
+}
+table.basic tr td {
+  @apply border border-blue-200 px-4 py-1;
+}
+table.basic a {
+  @apply bg-blue-900 text-white px-4 rounded-md inline-flex mx-1 items-center gap-1 text-sm py-1;
+}
+
+.btn-default,
+.btn-red {
+  @apply px-4 py-1 rounded-md;
+}
+
+.btn-red {
+  @apply bg-red-800 text-white px-4 py-1 rounded-md shadow-sm;
+}
+
+.btn-default {
+  @apply bg-gray-500 text-white px-4 py-1 rounded-md border border-gray-200 shadow-sm;
 }
