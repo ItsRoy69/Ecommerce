@@ -14,11 +14,19 @@ export default function ProductForm({
 }) {
   const [title,setTitle] = useState(existingTitle || '');
   const [description,setDescription] = useState(existingDescription || '');
+  const [category,setCategory] = useState('');
   const [price,setPrice] = useState(existingPrice || '');
   const [images,setImages] = useState(existingImages || []);
   const [goToProducts,setGoToProducts] = useState(false);
   const [isUploading,setIsUploading] = useState(false);
+  const [categories,setCategories] = useState([]);
   const router = useRouter();
+
+  useEffect(() => {
+    axios.get('/api/categories').then(result => {
+      setCategories(result.data);
+    });
+  }, []);
 
   async function saveProduct(ev) {
     ev.preventDefault();
@@ -61,13 +69,20 @@ export default function ProductForm({
     <form onSubmit={saveProduct}>
         <label>Product Name</label>
         <input type="text" placeholder="Product Name" value={title} onChange={ev => setTitle(ev.target.value)}/>
+        <label>Category</label>
+        <select value={category} onChange={ev => setCategory(ev.target.value)}>
+          <option value="">Uncategorized</option>
+          {categories.length > 0 && categories.map(c => (
+            <option key={c._id} value={c._id}>{c.name}</option>
+          ))}
+        </select>
         <label>Photos</label>
         <div className="mb-2 flex flex-wrap gap-1">
-          <ReactSortable list={images} className="flex flex-wrap gap-1" setList={updateImagesOrder}> 
+          <ReactSortable list={images} className="flex flex-wrap gap-1" setList={updateImagesOrder}>
             {!!images?.length && images.map(link => (
-                <div key={link} className="h-24 bg-white p-4 shadow-sm rounded-sm border border-gray-200">
-                  <img src={link} alt="" className="rounded-lg"/>
-                </div>
+              <div key={link} className="h-24 bg-white p-4 shadow-sm rounded-sm border border-gray-200">
+                <img src={link} alt="" className="rounded-lg"/>
+              </div>
             ))}
           </ReactSortable>
           {isUploading && (
