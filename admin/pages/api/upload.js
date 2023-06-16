@@ -4,9 +4,11 @@ const bucketName = 'itsroy69-ecommerce';
 import fs from 'fs';
 import mime from 'mime-types';
 import {mongooseConnect} from "@/lib/mongoose";
+import { isAdminRequest } from './auth/[...nextauth]';
 
 export default async function handle(req,res) {
   await mongooseConnect();
+  await isAdminRequest(req,res);
 
   const form = new multiparty.Form();
   const {fields,files} = await new Promise((resolve,reject) => {
