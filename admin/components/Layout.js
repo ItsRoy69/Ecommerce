@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {useState} from "react";
 import { Inter } from "next/font/google";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Navbar from "@/components/Navbar";
@@ -12,7 +13,7 @@ export default function Layout({children}) {
 
   if (!session) {
     return (
-      <div className="bg-bgGray w-screen h-screen flex items-center">
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-500  w-screen h-screen flex items-center">
         <div className="text-center w-full">
           <button
             onClick={() => signIn("google")}
