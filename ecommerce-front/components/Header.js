@@ -18,7 +18,11 @@ const Wrapper = styled.div`
   padding: 20px 0;
 `;
 const StyledNav = styled.nav`
- 
+  ${props => props.mobileNavActive ? `
+    display: block;
+  ` : `
+    display: none;
+  `}
   gap: 15px;
   position: fixed;
   top: 0;
@@ -56,20 +60,20 @@ const NavButton = styled.button`
   }
 `;
 
-
 export default function Header() {
+  const [mobileNavActive,setMobileNavActive] = useState(false);
     return (
         <StyledHeader>
             <Center>
                 <Wrapper>
                     <Logo href={'/'}>Ecommerce</Logo>
-                    <nav>
+                    <StyledNav mobileNavActive={mobileNavActive}>
                         <NavLink href={'/'}>Home</NavLink>
                         <NavLink href={'/products'}>All products</NavLink>
                         <NavLink href={'/categories'}>Categories</NavLink>
                         <NavLink href={'/account'}>Account</NavLink>
                         <NavLink href={'/cart'}>Cart</NavLink>
-                    </nav>
+                    </StyledNav>
                 </Wrapper>
 
             </Center>
