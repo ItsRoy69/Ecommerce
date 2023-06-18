@@ -3,23 +3,23 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 import { buffer } from 'micro';
 import { Order } from "@/models/Order";
 
-const endpointSecret = "whsec_a62f2c476a39d5587547e2690a8e4aebdd622df9a2c7baf154069cdeba8237da";
+const endpointSecret = "whsec_Me7kd3LELWR6nAI2XBORFNoism6VuA7P";
 
 export default async function handler(req, res) {
     await mongooseConnect();
     const sig = req.headers['stripe-signature'];
 
-    let event;
+  let event;
 
-    try {
-        event = stripe.webhooks.constructEvent(await buffer(req), sig, endpointSecret);
-    } catch (err) {
-        res.status(400).send(`Webhook Error: ${err.message}`);
-        return;
-    }
+  try {
+    event = stripe.webhooks.constructEvent(await buffer(req), sig, endpointSecret);
+  } catch (err) {
+    res.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
 
-// Handle the event
-switch (event.type) {
+  // Handle the event
+  switch (event.type) {
     case 'checkout.session.completed':
       const data = event.data.object;
       const orderId = data.metadata.orderId;
@@ -41,5 +41,5 @@ export const config = {
   api: {bodyParser:false,}
 };
 
-//top-supple-thrift-best
+//nicest-grace-glad-warmer
 //acct_1KQW8CSCQSilYJr6
