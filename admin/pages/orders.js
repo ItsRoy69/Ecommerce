@@ -9,9 +9,7 @@ export default function OrdersPage() {
       setOrders(response.data);
     });
   }, []);
-
   return (
-
     <Layout>
       <h1>Orders</h1>
       <table className="basic">
@@ -49,6 +47,5 @@ export default function OrdersPage() {
         </tbody>
       </table>
     </Layout>
-    
   );
 }
