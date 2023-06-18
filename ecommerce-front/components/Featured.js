@@ -1,8 +1,8 @@
-import Center from "./Center"
-import styled from "styled-components"
+import Center from "@/components/Center";
+import styled from "styled-components";
 import Button from "@/components/Button";
-import CartIcon from "@/components/icons/CartIcon";
 import ButtonLink from "@/components/ButtonLink";
+import CartIcon from "@/components/icons/CartIcon";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
 
@@ -46,6 +46,7 @@ const ColumnsWrapper = styled.div`
     }
   }
 `;
+
 const Column = styled.div`
   display: flex;
   align-items: center;
@@ -56,33 +57,37 @@ const ButtonsWrapper = styled.div`
   margin-top:25px;
 `;
 
-export default function Featured({ product }) {
-    const { addProduct } = useContext(CartContext);
-    function addFeaturedToCart() {
-        addProduct(product._id);
-    }
+export default function Featured({product}) {
 
-    return (
-        <Bg>
-            <Center>
-                <ColumnsWrapper>
-                    <Column>
-                        <div>
-                            <Title>{product.title}</Title>
-                            <Desc>{product.description}</Desc>
-                            <ButtonsWrapper>
-                                <ButtonLink href={'/product/' + product._id} outline={1} white={1} >Read more</ButtonLink>
-                                <Button white onClick={addFeaturedToCart}>
-                                    <CartIcon /> Add to cart
-                                </Button>
-                            </ButtonsWrapper>
-                        </div>
-                    </Column>
-                    <Column>
-                        <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt="" />
-                    </Column>
-                </ColumnsWrapper>
-            </Center>
-        </Bg>
-    );
+  const {addProduct} = useContext(CartContext);
+  function addFeaturedToCart() {
+    addProduct(product._id);
+  }
+
+  return (
+    
+    <Bg>
+      <Center>
+        <ColumnsWrapper>
+          <Column>
+            <div>
+              <Title>{product.title}</Title>
+              <Desc>{product.description}</Desc>
+              <ButtonsWrapper>
+                <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read more</ButtonLink>
+                <Button white onClick={addFeaturedToCart}>
+                  <CartIcon />
+                  Add to cart
+                </Button>
+              </ButtonsWrapper>
+            </div>
+          </Column>
+          <Column>
+            <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
+          </Column>
+        </ColumnsWrapper>
+      </Center>
+
+    </Bg>
+  );
 }
