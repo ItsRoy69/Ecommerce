@@ -32,7 +32,7 @@ There are 2 different sections in the app as follows -
 
 ### 2. Page of Admins Website
 <pre>
-<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/a0d41557-7c27-4f21-adf6-a3ccb223d333" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/6d2779b1-8093-49fa-bc70-903fb4b5126d" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/dfe6f05b-22ec-45e4-8b8c-f4afc342b970" width="1000">
+<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/850de996-12a6-4035-9882-d5a570b22828" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/024d8466-98e2-4540-8c07-b6f7ffa281c8" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/1558fd89-861b-4c2c-bed7-5ef655915824" width="1000">
 </pre>
 
 ## Installation
