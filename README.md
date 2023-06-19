@@ -1,6 +1,6 @@
 <h1 align="center">Ecommerce</h1>
 
-<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/1d1349c5-8722-4fa5-80b6-f89dd8cd551c" width="1000" /> 
+<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/718ccd6e-4ab5-4cef-9bef-94c88b1e23c5" width="1000" /> 
 
 ## Overview of the App
 
@@ -25,8 +25,9 @@ There are 2 different sections in the app as follows -
 
 ### 1. Page of Ecommerce Customer Website
 <pre>
-<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/bce9982b-0add-41bc-9a85-6e97fe9c4f4f" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/118daedb-23eb-424b-a787-97054657afa8" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/486e720b-03e9-4224-8dbe-17c3d37c10db" width="1000"> 
+<img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/2b0171e0-c338-40e4-8e2f-7e33614206d7" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/f09bcf47-17ff-4bdb-bb35-49623576b5b4" width="1000"> <img src="https://github.com/ItsRoy69/Ecommerce/assets/78967360/da28c2fc-3e20-40fc-8a9d-0c698d6a9c6e" width="1000"> 
 </pre>
+
 
 
 ### 2. Page of Admins Website
