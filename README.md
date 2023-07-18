@@ -14,7 +14,7 @@ Built an ecommerce website where we offer a wide range of products for our custo
 There are 2 different sections in the app as follows -
 
 1. <b>[Admins Section](https://ecommerceadmin-itsroy69.vercel.app/)</b> - This section grants administrators access to manage all the products that will be displayed on the frontend for customers. Administrators can also review the payments made using Stripe.
-2. <b>[Customers Section](https://ecommerce-itsroy.vercel.app/)</b> - This section provides general customers with access to view and purchase products using Stripe as the payment method.
+2. <b>[Customers Section](https://ecommerce-itsroy69.vercel.app/)</b> - This section provides general customers with access to view and purchase products using Stripe as the payment method.
 
 ## Tech Stack Used -
 
